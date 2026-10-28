@@ -1,0 +1,142 @@
+---
+const comparisonPoints = [
+  {
+    feature: "Costo iniziale hardware",
+    traditional: "Da 500€ a oltre 1.000€ per l'acquisto della cassa fisica",
+    digiscon: "0€, usi lo smartphone o tablet che possiedi già",
+  },
+  {
+    feature: "Verifica periodica biennale",
+    traditional: "Obbligatoria per legge ogni 2 anni (100€–150€ a visita)",
+    digiscon: "Nessuna verifica richiesta. Zero costi periodici",
+  },
+  {
+    feature: "Chiusura giornaliera di cassa",
+    traditional: "Da stampare ed inviare manualmente a fine turno",
+    digiscon: "Invio automatico in tempo reale per ogni singolo scontrino",
+  },
+  {
+    feature: "Mobilità ed ingombro",
+    traditional: "Ingombrante, pesante e vincolato alla presa di corrente",
+    digiscon: "Tutto in tasca. Ideale per negozio fisico, fiere o mobilità",
+  },
+  {
+    feature: "Carta e rotoli termici",
+    traditional: "Acquisto continuo di rotoli e scontrini che si cancellano",
+    digiscon: "Digitale via WhatsApp, QR Code o SMS (stampa opzionale)",
+  },
+  {
+    feature: "Guasti e manutenzione",
+    traditional: "Blocco dell'attività e attesa del tecnico autorizzato",
+    digiscon: "Se cambi telefono scarichi l'app e sei subito operativo",
+  },
+];
+---
+
+<section id="confronto" class="relative py-24 sm:py-32 bg-zinc-50 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <div class="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
+      <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-orange-50 border border-orange-200/60 text-[#FF6B00] text-xs font-bold mb-6">
+        Perché Cambiare
+      </div>
+
+      <h2 class="text-4xl sm:text-5xl font-black text-zinc-900 tracking-tight leading-[1.1]">
+        Registratore tradizionale o Digiscon? <br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] to-amber-500">
+          I numeri parlano chiaro.
+        </span>
+      </h2>
+      <p class="text-base sm:text-lg text-zinc-600 mt-4 leading-relaxed font-normal">
+        Scopri quanto risparmi ogni anno eliminando l'hardware fisico, le verifiche fiscali e le complicazioni burocratiche.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+
+      <div class="bg-white rounded-[2.5rem] p-8 sm:p-10 border border-zinc-200 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-6 border-b border-zinc-100">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-zinc-400">Metodo Classico</span>
+              <h3 class="text-2xl font-black text-zinc-800 mt-1">Registratore Fisico</h3>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-zinc-100 text-zinc-500 flex items-center justify-center font-black text-sm">
+              RT
+            </div>
+          </div>
+
+          <div class="mt-8 space-y-6">
+            {comparisonPoints.map((item) => (
+              <div class="flex items-start gap-4">
+                <div class="w-6 h-6 rounded-full bg-rose-50 text-rose-500 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-zinc-400 uppercase tracking-wide">{item.feature}</p>
+                  <p class="text-sm font-medium text-zinc-700 mt-0.5">{item.traditional}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="mt-10 pt-6 border-t border-zinc-100">
+          <p class="text-xs text-zinc-400 text-center font-medium">
+            Costo medio stimato al biennio: <span class="font-bold text-zinc-700">~800€ - 1.300€</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-zinc-950 rounded-[2.5rem] p-8 sm:p-10 text-white shadow-2xl shadow-zinc-950/20 border-2 border-[#FF6B00]/40 flex flex-col justify-between relative overflow-hidden">
+        
+        <div class="absolute top-6 right-8">
+          <span class="bg-[#FF6B00]/20 text-[#FF6B00] border border-[#FF6B00]/40 text-[10px] font-black uppercase tracking-wider px-3.5 py-1 rounded-full">
+            Soluzione Cloud
+          </span>
+        </div>
+
+        <div>
+          <div class="pb-6 border-b border-zinc-800">
+            <span class="text-xs font-bold uppercase tracking-wider text-orange-400">Nuova Generazione</span>
+            <h3 class="text-2xl font-black mt-1">Digiscon App</h3>
+          </div>
+
+          <div class="mt-8 space-y-6">
+            {comparisonPoints.map((item) => (
+              <div class="flex items-start gap-4">
+                <div class="w-6 h-6 rounded-full bg-orange-500/20 text-[#FF6B00] flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-orange-400 uppercase tracking-wide">{item.feature}</p>
+                  <p class="text-sm font-semibold text-zinc-100 mt-0.5">{item.digiscon}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="mt-10 pt-6 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <p class="text-[10px] text-zinc-400 uppercase font-bold tracking-wider">Risparmio Immediato</p>
+            <p class="text-xl font-black text-white">Zero spese hardware</p>
+          </div>
+          <a
+            href="#prezzi"
+            class="whitespace-nowrap px-7 py-3 bg-[#FF6B00] hover:bg-[#E55F00] text-white font-bold text-sm rounded-full shadow-lg shadow-orange-500/20 transition-transform active:scale-95"
+          >
+            Inizia Gratis
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

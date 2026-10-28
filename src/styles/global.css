@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+  --color-brand-orange: #FF6B00;
+  --color-brand-orange-hover: #E55F00;
+  --color-brand-dark: #181C24;
+  --color-brand-black: #0F1115;
+}
+
+/* Override globale dei gradienti e delle selezioni */
+::selection {
+  background-color: #FF6B00;
+  color: #ffffff;
+}
+
+html {
+  font-family: 'Outfit', sans-serif;
+}

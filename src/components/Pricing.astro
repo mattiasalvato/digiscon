@@ -1,0 +1,197 @@
+---
+---
+
+<section id="prezzi" class="relative py-24 sm:py-32 bg-white overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+      <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-orange-50 border border-orange-200/60 text-[#FF6B00] text-xs font-bold mb-4">
+        Tariffe Chiare
+      </div>
+      <h2 class="text-4xl sm:text-5xl font-black text-zinc-900 tracking-tight leading-[1.1]">
+        Nessun costo nascosto. <br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] to-amber-500">
+          Inizia con 15 giorni gratis.
+        </span>
+      </h2>
+      <p class="text-base sm:text-lg text-zinc-600 mt-4 leading-relaxed font-normal">
+        Nessuna carta di credito richiesta alla registrazione. Disdici quando vuoi senza vincoli.
+      </p>
+
+      <div class="mt-8 inline-flex items-center gap-2 bg-zinc-100 p-1.5 rounded-full border border-zinc-200 shadow-inner">
+        <button 
+          id="billing-monthly" 
+          class="px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-[#FF6B00] text-white transition-all shadow-sm cursor-pointer"
+        >
+          Fatturazione Mensile
+        </button>
+        <button 
+          id="billing-annual" 
+          class="px-5 py-2 rounded-full text-xs sm:text-sm font-bold text-zinc-600 hover:text-zinc-900 transition-all cursor-pointer flex items-center gap-1.5"
+        >
+          Annuale
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 font-extrabold px-2 py-0.5 rounded-full">
+            -2 Mesi Gratis
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
+
+      <div class="bg-zinc-50 rounded-[2.5rem] p-8 sm:p-10 border border-zinc-200 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-6 border-b border-zinc-200">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-zinc-400">Solo Cassa Cloud</span>
+              <h3 class="text-2xl font-black text-zinc-900 mt-1">Digiscon Smart</h3>
+            </div>
+            <span class="w-10 h-10 rounded-2xl bg-orange-100 text-[#FF6B00] font-black flex items-center justify-center text-xs">
+              APP
+            </span>
+          </div>
+
+          <div class="mt-8 flex items-baseline gap-2">
+            <span class="text-5xl font-black text-zinc-900 tracking-tight" id="price-smart">€9,90</span>
+            <span class="text-sm font-medium text-zinc-500" id="period-smart">/ mese + IVA</span>
+          </div>
+          <p class="text-xs text-zinc-400 mt-1 font-medium" id="subtext-smart">Fatturato mensilmente</p>
+
+          <div class="mt-8 space-y-4 text-sm text-zinc-700 font-medium">
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+              <span>Scontrini e corrispettivi illimitati Agenzia Entrate</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+              <span>Invio via WhatsApp, SMS, Email e QR Code</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+              <span>Supporto stampanti termiche Bluetooth tascabili</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+              <span>Smartphone, Tablet e Web App da browser</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+              <span>Zero verifiche periodiche biennali</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 pt-6 border-t border-zinc-200">
+          <a
+            href="#prova-smart"
+            class="block w-full py-4 text-center text-sm font-bold text-zinc-900 bg-white hover:bg-zinc-100 border border-zinc-200 rounded-full transition-colors active:scale-95 shadow-sm"
+          >
+            Inizia Prova Gratuita
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-zinc-950 rounded-[2.5rem] p-8 sm:p-10 text-white shadow-2xl shadow-zinc-950/20 border-2 border-[#FF6B00] flex flex-col justify-between relative overflow-hidden">
+        
+        <div class="absolute top-6 right-8">
+          <span class="bg-[#FF6B00] text-white text-[10px] font-black uppercase tracking-wider px-3.5 py-1 rounded-full shadow">
+            Bundle Consigliato
+          </span>
+        </div>
+
+        <div>
+          <div class="pb-6 border-b border-zinc-800">
+            <span class="text-xs font-bold uppercase tracking-wider text-orange-400">Cassa + Gestionale Completo</span>
+            <h3 class="text-2xl font-black mt-1">Digiscon + Negozio Easy</h3>
+          </div>
+
+          <div class="mt-8 flex items-baseline gap-2">
+            <span class="text-5xl font-black text-white tracking-tight" id="price-bundle">€19,90</span>
+            <span class="text-sm font-medium text-zinc-400" id="period-bundle">/ mese + IVA</span>
+          </div>
+          <p class="text-xs text-orange-400/90 mt-1 font-medium" id="subtext-bundle">Tutto incluso in un unico abbonamento</p>
+
+          <div class="mt-8 space-y-4 text-sm text-zinc-200 font-medium">
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-[#FF6B00] text-white flex items-center justify-center shrink-0 text-xs font-black">✓</span>
+              <span><strong>Tutte le funzioni di Digiscon Smart</strong></span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-[#FF6B00] text-white flex items-center justify-center shrink-0 text-xs font-black">✓</span>
+              <span>Gestione magazzino e giacenze in tempo reale</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-[#FF6B00] text-white flex items-center justify-center shrink-0 text-xs font-black">✓</span>
+              <span>Lettura articoli con barcode e codici a barre</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-[#FF6B00] text-white flex items-center justify-center shrink-0 text-xs font-black">✓</span>
+              <span>Sincronizzazione WooCommerce e Shopify</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-[#FF6B00] text-white flex items-center justify-center shrink-0 text-xs font-black">✓</span>
+              <span>Assistenza tecnica prioritaria via WhatsApp</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 pt-6 border-t border-zinc-800">
+          <a
+            href="#prova-bundle"
+            class="block w-full py-4 text-center text-sm font-bold text-white bg-[#FF6B00] hover:bg-[#E55F00] rounded-full shadow-lg shadow-orange-500/25 transition-transform active:scale-95"
+          >
+            Prova il Bundle 15 Giorni
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const btnMonthly = document.getElementById('billing-monthly');
+  const btnAnnual = document.getElementById('billing-annual');
+  const priceSmart = document.getElementById('price-smart');
+  const periodSmart = document.getElementById('period-smart');
+  const subtextSmart = document.getElementById('subtext-smart');
+  const priceBundle = document.getElementById('price-bundle');
+  const periodBundle = document.getElementById('period-bundle');
+  const subtextBundle = document.getElementById('subtext-bundle');
+
+  let isAnnual = false;
+
+  const updatePrices = () => {
+    if (isAnnual) {
+      btnAnnual?.classList.add('bg-[#FF6B00]', 'text-white');
+      btnAnnual?.classList.remove('text-zinc-600');
+      btnMonthly?.classList.remove('bg-[#FF6B00]', 'text-white');
+      btnMonthly?.classList.add('text-zinc-600');
+
+      if (priceSmart) priceSmart.textContent = "€7,90";
+      if (periodSmart) periodSmart.textContent = "/ mese + IVA";
+      if (subtextSmart) subtextSmart.textContent = "Fatturato annualmente (94,80€/anno)";
+
+      if (priceBundle) priceBundle.textContent = "€15,90";
+      if (periodBundle) periodBundle.textContent = "/ mese + IVA";
+      if (subtextBundle) subtextBundle.textContent = "Fatturato annualmente (190,80€/anno)";
+    } else {
+      btnMonthly?.classList.add('bg-[#FF6B00]', 'text-white');
+      btnMonthly?.classList.remove('text-zinc-600');
+      btnAnnual?.classList.remove('bg-[#FF6B00]', 'text-white');
+      btnAnnual?.classList.add('text-zinc-600');
+
+      if (priceSmart) priceSmart.textContent = "€9,90";
+      if (periodSmart) periodSmart.textContent = "/ mese + IVA";
+      if (subtextSmart) subtextSmart.textContent = "Fatturato mensilmente";
+
+      if (priceBundle) priceBundle.textContent = "€19,90";
+      if (periodBundle) periodBundle.textContent = "/ mese + IVA";
+      if (subtextBundle) subtextBundle.textContent = "Tutto incluso in un unico abbonamento";
+    }
+  };
+
+  btnMonthly?.addEventListener('click', () => { isAnnual = false; updatePrices(); });
+  btnAnnual?.addEventListener('click', () => { isAnnual = true; updatePrices(); });
+</script>

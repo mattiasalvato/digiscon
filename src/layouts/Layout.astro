@@ -1,0 +1,32 @@
+---
+// src/layouts/Layout.astro
+import '../styles/global.css'; // o il percorso del tuo file in styles
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Digiscon - Cassa Telematica Cloud & Scontrino Digitale", 
+  description = "Emetti scontrini fiscali direttamente da smartphone a norma AdE senza registratore fisico." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <!-- Google Font Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#FAFAFA] text-[#181C24] antialiased selection:bg-brand-orange selection:text-white">
+    <slot />
+  </body>
+</html>
