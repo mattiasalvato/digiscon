@@ -9,11 +9,17 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "npm run build && node deploy.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.4.3",
     "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "basic-ftp": "^6.2.5",
+    "dotenv": "^18.0.9",
+    "ftp-deploy": "^2.4.7"
   }
 }
