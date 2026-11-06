@@ -1,0 +1,289 @@
+---
+// Componente Cookie Consent stile Iubenda / CookieYes in Nero e Arancione
+---
+
+<!-- 1. BADGE FLOTTANTE DI RIAPERTURA (Visibile dopo la scelta) -->
+<button
+  id="cky-reopen-badge"
+  type="button"
+  aria-label="Gestisci consenso cookie"
+  title="Preferenze Cookie"
+  style="display: none;"
+  class="fixed bottom-4 left-4 z-[9990] flex items-center justify-center w-11 h-11 rounded-full bg-[#181C24] text-[#FF6B00] border border-zinc-800 shadow-xl hover:scale-105 active:scale-95 transition-transform cursor-pointer group"
+>
+  <svg class="w-5 h-5 group-hover:rotate-12 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a10 10 0 1 0 10 10c0-.5-.4-1-.9-1a2.5 2.5 0 0 1-2.5-2.5c0-.5-.4-1-.9-1A3 3 0 0 1 15 5c0-.6-.4-1-1-1a3 3 0 0 1-2-2z" />
+    <circle cx="8.5" cy="8.5" r="1" fill="currentColor" />
+    <circle cx="16" cy="15" r="1" fill="currentColor" />
+    <circle cx="9" cy="15" r="1.5" fill="currentColor" />
+  </svg>
+</button>
+
+<!-- 2. BACKDROP OSCURATO DI FONDO (Blocco interazione conforme) -->
+<div
+  id="cky-backdrop"
+  style="display: none;"
+  class="fixed inset-0 z-[9998] bg-black/60 backdrop-blur-[2px] transition-opacity duration-300"
+></div>
+
+<!-- 3. BANNER PRINCIPALE (Stile Iubenda / CookieYes) -->
+<div
+  id="cky-banner"
+  style="display: none;"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cky-banner-title"
+  class="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-[480px] z-[9999] bg-[#181C24] text-zinc-100 rounded-2xl border border-zinc-800 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)] p-6 font-sans text-xs"
+>
+  <div class="flex items-start justify-between gap-3 mb-3">
+    <div class="flex items-center gap-2.5">
+      <div class="w-7 h-7 rounded-lg bg-orange-500/10 text-[#FF6B00] flex items-center justify-center shrink-0 border border-[#FF6B00]/20">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a10 10 0 1 0 10 10c0-.5-.4-1-.9-1a2.5 2.5 0 0 1-2.5-2.5c0-.5-.4-1-.9-1A3 3 0 0 1 15 5c0-.6-.4-1-1-1a3 3 0 0 1-2-2z" />
+        </svg>
+      </div>
+      <h2 id="cky-banner-title" class="text-sm font-bold text-white tracking-tight">
+        Rispettiamo la tua privacy
+      </h2>
+    </div>
+  </div>
+
+  <p class="text-zinc-400 text-xs leading-relaxed">
+    Utilizziamo cookie tecnici essenziali per assicurare il corretto funzionamento della piattaforma. Con il tuo consenso, utilizziamo inoltre cookie analitici e di profilazione per analizzare il traffico e offrirti un'esperienza personalizzata. Puoi consultare la <a href="/cookie" class="text-[#FF6B00] hover:underline underline-offset-2">Cookie Policy</a> e l'<a href="/privacy" class="text-[#FF6B00] hover:underline underline-offset-2">Informativa Privacy</a>.
+  </p>
+
+  <div class="mt-5 grid grid-cols-3 gap-2 text-xs font-semibold">
+    <button
+      id="cky-btn-reject"
+      type="button"
+      class="py-2.5 px-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition-colors text-center cursor-pointer"
+    >
+      Rifiuta
+    </button>
+    <button
+      id="cky-btn-customize"
+      type="button"
+      class="py-2.5 px-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition-colors text-center cursor-pointer"
+    >
+      Personalizza
+    </button>
+    <button
+      id="cky-btn-accept-all"
+      type="button"
+      class="py-2.5 px-3 rounded-xl bg-[#FF6B00] hover:bg-[#E55F00] text-white font-bold transition-colors text-center cursor-pointer shadow-md shadow-orange-500/10"
+    >
+      Accetta tutti
+    </button>
+  </div>
+</div>
+
+<!-- 4. MODALE DELLE PREFERENZE DETTAGLIATE -->
+<div
+  id="cky-preferences-modal"
+  style="display: none;"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cky-modal-title"
+  class="fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm"
+>
+  <div class="bg-[#181C24] text-zinc-100 border border-zinc-800 w-full max-w-lg rounded-2xl shadow-2xl p-6 sm:p-7 relative max-h-[90vh] flex flex-col font-sans">
+    
+    <div class="flex items-center justify-between pb-4 border-b border-zinc-800">
+      <div>
+        <h3 id="cky-modal-title" class="text-base font-bold text-white">Centro Preferenze Privacy</h3>
+        <p class="text-[11px] text-zinc-400 mt-0.5">Personalizza il consenso ai tracker per ciascuna finalità</p>
+      </div>
+      <button
+        id="cky-btn-close-modal"
+        type="button"
+        aria-label="Chiudi"
+        class="w-7 h-7 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white flex items-center justify-center transition-colors cursor-pointer text-xs"
+      >
+        ✕
+      </button>
+    </div>
+
+    <!-- Lista Categorie -->
+    <div class="py-4 space-y-3 overflow-y-auto flex-1 pr-1 text-xs">
+      
+      <!-- Categoria: Tecnici -->
+      <div class="p-4 bg-zinc-900/60 rounded-xl border border-zinc-800/80">
+        <div class="flex items-center justify-between gap-3">
+          <div>
+            <span class="font-bold text-white text-xs">Strettamente Necessari</span>
+            <span class="ml-2 text-[10px] font-bold uppercase tracking-wider text-[#FF6B00]">Sempre attivi</span>
+          </div>
+          <div class="w-9 h-5 bg-[#FF6B00] rounded-full p-0.5 flex items-center justify-end cursor-not-allowed opacity-90">
+            <div class="w-4 h-4 bg-white rounded-full"></div>
+          </div>
+        </div>
+        <p class="text-zinc-400 text-[11px] mt-2 leading-relaxed">
+          Questi strumenti di tracciamento sono necessari per consentire la navigazione di base, il mantenimento delle sessioni e la sicurezza della piattaforma. Non possono essere disattivati.
+        </p>
+      </div>
+
+      <!-- Categoria: Analitici -->
+      <div class="p-4 bg-zinc-900/60 rounded-xl border border-zinc-800/80">
+        <div class="flex items-center justify-between gap-3">
+          <div>
+            <span class="font-bold text-white text-xs">Funzionali & Statistici</span>
+          </div>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input id="cky-toggle-analytics" type="checkbox" class="sr-only peer" />
+            <div class="w-9 h-5 bg-zinc-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#FF6B00]"></div>
+          </label>
+        </div>
+        <p class="text-zinc-400 text-[11px] mt-2 leading-relaxed">
+          Ci aiutano a misurare il traffico aggregato e a capire quali sezioni della pagina vengono visualizzate di più, al fine di ottimizzare prestazioni ed usabilità.
+        </p>
+      </div>
+
+      <!-- Categoria: Marketing -->
+      <div class="p-4 bg-zinc-900/60 rounded-xl border border-zinc-800/80">
+        <div class="flex items-center justify-between gap-3">
+          <div>
+            <span class="font-bold text-white text-xs">Targeting & Pubblicità</span>
+          </div>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input id="cky-toggle-marketing" type="checkbox" class="sr-only peer" />
+            <div class="w-9 h-5 bg-zinc-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#FF6B00]"></div>
+          </label>
+        </div>
+        <p class="text-zinc-400 text-[11px] mt-2 leading-relaxed">
+          Questi cookie consentono di personalizzare le campagne promozionali di lancio del servizio e monitorare l'efficacia dei canali di acquisizione.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Footer Azioni Modale -->
+    <div class="pt-4 border-t border-zinc-800 flex items-center justify-between gap-2 text-xs">
+      <button
+        id="cky-btn-reject-modal"
+        type="button"
+        class="py-2 px-3 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+      >
+        Rifiuta tutti
+      </button>
+      <button
+        id="cky-btn-save-preferences"
+        type="button"
+        class="py-2.5 px-4 rounded-xl bg-[#FF6B00] hover:bg-[#E55F00] text-white font-bold transition-colors cursor-pointer shadow-md"
+      >
+        Salva le mie scelte
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    const CONSENT_KEY = 'digiscon_consent_state_v2';
+
+    const banner = document.getElementById('cky-banner');
+    const backdrop = document.getElementById('cky-backdrop');
+    const badge = document.getElementById('cky-reopen-badge');
+    const modal = document.getElementById('cky-preferences-modal');
+
+    const btnAcceptAll = document.getElementById('cky-btn-accept-all');
+    const btnReject = document.getElementById('cky-btn-reject');
+    const btnCustomize = document.getElementById('cky-btn-customize');
+    const btnCloseModal = document.getElementById('cky-btn-close-modal');
+    const btnRejectModal = document.getElementById('cky-btn-reject-modal');
+    const btnSavePreferences = document.getElementById('cky-btn-save-preferences');
+
+    const toggleAnalytics = document.getElementById('cky-toggle-analytics');
+    const toggleMarketing = document.getElementById('cky-toggle-marketing');
+
+    function showBanner() {
+      if (banner) banner.style.display = 'block';
+      if (backdrop) backdrop.style.display = 'block';
+      if (badge) badge.style.display = 'none';
+    }
+
+    function hideBanner() {
+      if (banner) banner.style.display = 'none';
+      if (backdrop) backdrop.style.display = 'none';
+      if (badge) badge.style.display = 'flex';
+    }
+
+    function openModal() {
+      if (banner) banner.style.display = 'none';
+      if (backdrop) backdrop.style.display = 'none';
+      
+      const current = getStoredConsent();
+      if (toggleAnalytics) toggleAnalytics.checked = !!current?.analytics;
+      if (toggleMarketing) toggleMarketing.checked = !!current?.marketing;
+      
+      if (modal) modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      if (modal) modal.style.display = 'none';
+      const current = getStoredConsent();
+      if (!current) {
+        showBanner();
+      } else {
+        if (badge) badge.style.display = 'flex';
+      }
+    }
+
+    function getStoredConsent() {
+      try {
+        const item = localStorage.getItem(CONSENT_KEY);
+        return item ? JSON.parse(item) : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function saveConsent(analytics, marketing) {
+      const payload = {
+        necessary: true,
+        analytics: Boolean(analytics),
+        marketing: Boolean(marketing),
+        date: new Date().toISOString()
+      };
+      localStorage.setItem(CONSENT_KEY, JSON.stringify(payload));
+      if (modal) modal.style.display = 'none';
+      hideBanner();
+    }
+
+    function start() {
+      const saved = getStoredConsent();
+      if (!saved) {
+        // Mostra in automatico al caricamento della pagina
+        showBanner();
+      } else {
+        // Mostra il badge di gestione preferenze
+        if (badge) badge.style.display = 'flex';
+      }
+
+      if (btnAcceptAll) btnAcceptAll.onclick = () => saveConsent(true, true);
+      if (btnReject) btnReject.onclick = () => saveConsent(false, false);
+      if (btnCustomize) btnCustomize.onclick = openModal;
+      if (badge) badge.onclick = openModal;
+
+      if (btnCloseModal) btnCloseModal.onclick = closeModal;
+      if (btnRejectModal) btnRejectModal.onclick = () => saveConsent(false, false);
+      if (btnSavePreferences) {
+        btnSavePreferences.onclick = () => {
+          saveConsent(toggleAnalytics?.checked, toggleMarketing?.checked);
+        };
+      }
+
+      if (modal) {
+        modal.onclick = (e) => {
+          if (e.target === modal) closeModal();
+        };
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', start);
+    } else {
+      start();
+    }
+  })();
+</script>

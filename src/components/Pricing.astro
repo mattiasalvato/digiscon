@@ -39,15 +39,16 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
 
+      <!-- PIANO 1: DIGISCON SMART -->
       <div class="bg-zinc-50 rounded-[2.5rem] p-8 sm:p-10 border border-zinc-200 shadow-sm flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between pb-6 border-b border-zinc-200">
             <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-zinc-400">Solo Cassa Cloud</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-zinc-400">Postazione Singola</span>
               <h3 class="text-2xl font-black text-zinc-900 mt-1">Digiscon Smart</h3>
             </div>
             <span class="w-10 h-10 rounded-2xl bg-orange-100 text-[#FF6B00] font-black flex items-center justify-center text-xs">
-              APP
+              BASE
             </span>
           </div>
 
@@ -91,42 +92,43 @@
         </div>
       </div>
 
+      <!-- PIANO 2: DIGISCON PRO -->
       <div class="bg-zinc-950 rounded-[2.5rem] p-8 sm:p-10 text-white shadow-2xl shadow-zinc-950/20 border-2 border-[#FF6B00] flex flex-col justify-between relative overflow-hidden">
         
         <div class="absolute top-6 right-8">
           <span class="bg-[#FF6B00] text-white text-[10px] font-black uppercase tracking-wider px-3.5 py-1 rounded-full shadow">
-            Bundle Consigliato
+            Più Popolare
           </span>
         </div>
 
         <div>
           <div class="pb-6 border-b border-zinc-800">
-            <span class="text-xs font-bold uppercase tracking-wider text-orange-400">Cassa + Gestionale Completo</span>
-            <h3 class="text-2xl font-black mt-1">Digiscon + Negozio Easy</h3>
+            <span class="text-xs font-bold uppercase tracking-wider text-orange-400">Multi-Postazione & Analytics</span>
+            <h3 class="text-2xl font-black mt-1">Digiscon Pro</h3>
           </div>
 
           <div class="mt-8 flex items-baseline gap-2">
-            <span class="text-5xl font-black text-white tracking-tight" id="price-bundle">€19,90</span>
+            <span class="text-5xl font-black text-white tracking-tight" id="price-bundle">€17,90</span>
             <span class="text-sm font-medium text-zinc-400" id="period-bundle">/ mese + IVA</span>
           </div>
-          <p class="text-xs text-orange-400/90 mt-1 font-medium" id="subtext-bundle">Tutto incluso in un unico abbonamento</p>
+          <p class="text-xs text-orange-400/90 mt-1 font-medium" id="subtext-bundle">Per attività strutturate e team</p>
 
           <div class="mt-8 space-y-4 text-sm text-zinc-200 font-medium">
             <div class="flex items-center gap-3">
               <span class="w-5 h-5 rounded-full bg-[#FF6B00] text-white flex items-center justify-center shrink-0 text-xs font-black">✓</span>
-              <span><strong>Tutte le funzioni di Digiscon Smart</strong></span>
+              <span><strong>Tutte le funzioni del piano Smart</strong></span>
             </div>
             <div class="flex items-center gap-3">
               <span class="w-5 h-5 rounded-full bg-[#FF6B00] text-white flex items-center justify-center shrink-0 text-xs font-black">✓</span>
-              <span>Gestione magazzino e giacenze in tempo reale</span>
+              <span>Fino a 3 casse e dispositivi contemporanei</span>
             </div>
             <div class="flex items-center gap-3">
               <span class="w-5 h-5 rounded-full bg-[#FF6B00] text-white flex items-center justify-center shrink-0 text-xs font-black">✓</span>
-              <span>Lettura articoli con barcode e codici a barre</span>
+              <span>Catalogo articoli e categorie illimitate</span>
             </div>
             <div class="flex items-center gap-3">
               <span class="w-5 h-5 rounded-full bg-[#FF6B00] text-white flex items-center justify-center shrink-0 text-xs font-black">✓</span>
-              <span>Sincronizzazione WooCommerce e Shopify</span>
+              <span>Esportazione automatica per il commercialista</span>
             </div>
             <div class="flex items-center gap-3">
               <span class="w-5 h-5 rounded-full bg-[#FF6B00] text-white flex items-center justify-center shrink-0 text-xs font-black">✓</span>
@@ -137,10 +139,10 @@
 
         <div class="mt-10 pt-6 border-t border-zinc-800">
           <a
-            href="#prova-bundle"
+            href="#prova-pro"
             class="block w-full py-4 text-center text-sm font-bold text-white bg-[#FF6B00] hover:bg-[#E55F00] rounded-full shadow-lg shadow-orange-500/25 transition-transform active:scale-95"
           >
-            Prova il Bundle 15 Giorni
+            Prova Digiscon Pro Gratis
           </a>
         </div>
       </div>
@@ -173,9 +175,9 @@
       if (periodSmart) periodSmart.textContent = "/ mese + IVA";
       if (subtextSmart) subtextSmart.textContent = "Fatturato annualmente (94,80€/anno)";
 
-      if (priceBundle) priceBundle.textContent = "€15,90";
+      if (priceBundle) priceBundle.textContent = "€13,90";
       if (periodBundle) periodBundle.textContent = "/ mese + IVA";
-      if (subtextBundle) subtextBundle.textContent = "Fatturato annualmente (190,80€/anno)";
+      if (subtextBundle) subtextBundle.textContent = "Fatturato annualmente (166,80€/anno)";
     } else {
       btnMonthly?.classList.add('bg-[#FF6B00]', 'text-white');
       btnMonthly?.classList.remove('text-zinc-600');
@@ -186,9 +188,9 @@
       if (periodSmart) periodSmart.textContent = "/ mese + IVA";
       if (subtextSmart) subtextSmart.textContent = "Fatturato mensilmente";
 
-      if (priceBundle) priceBundle.textContent = "€19,90";
+      if (priceBundle) priceBundle.textContent = "€17,90";
       if (periodBundle) periodBundle.textContent = "/ mese + IVA";
-      if (subtextBundle) subtextBundle.textContent = "Tutto incluso in un unico abbonamento";
+      if (subtextBundle) subtextBundle.textContent = "Per attività strutturate e team";
     }
   };
 
